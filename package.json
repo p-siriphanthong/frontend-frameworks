@@ -1,0 +1,17 @@
+{
+  "name": "frontend-frameworks",
+  "version": "1.0.0",
+  "main": "src/index.html",
+  "license": "ISC",
+  "scripts": {
+    "dev": "parcel src/index.html"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "redux": "^4.0.5"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
