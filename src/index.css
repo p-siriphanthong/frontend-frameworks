@@ -6,6 +6,10 @@
   --primary-color: #673ab8;
 }
 
+#vue-v2 {
+  --primary-color: #4fc08d;
+}
+
 #root {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
