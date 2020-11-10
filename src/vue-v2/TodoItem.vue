@@ -2,8 +2,8 @@
   <div class="todo-item">
     <form class="todo-form" v-if="isEditing" @submit="editTodo">
       <input
-        v-model="addingTitle"
-        ref="addingTitleInput"
+        v-model="editingTitle"
+        ref="editingTitleInput"
         type="text"
         name="title"
         placeholder="Todo title"
@@ -39,22 +39,22 @@ export default {
   props: ['id', 'title', 'isCompleted'],
   data: function() {
     return {
-      addingTitle: this.title,
+      editingTitle: this.title,
       isEditing: false,
     }
   },
   methods: {
     onEditing: function() {
-      this.addingTitle = this.title
+      this.editingTitle = this.title
       this.isEditing = true
-      this.$nextTick(() => this.$refs.addingTitleInput.focus())
+      this.$nextTick(() => this.$refs.editingTitleInput.focus())
     },
     onCancelEditing: function() {
       this.isEditing = false
     },
     editTodo: function(event) {
       event.preventDefault()
-      editTodo(this.id, this.addingTitle)
+      editTodo(this.id, this.editingTitle)
       this.isEditing = false
     },
     removeTodo: function() {
