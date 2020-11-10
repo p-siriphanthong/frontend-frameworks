@@ -1,11 +1,12 @@
 import { h } from 'preact'
-import { useState } from 'preact/hooks'
+import { useState, useEffect, useRef } from 'preact/hooks'
 import { editTodo, removeTodo, toggleCompleted } from '../redux'
 
 /** @jsx h */
 
 const TodoItem = ({ id, title, isCompleted }) => {
   const [isEditing, setIsEditing] = useState(false)
+  const inputRef = useRef(null)
 
   const onEditTodo = (event) => {
     event.preventDefault()
@@ -13,16 +14,21 @@ const TodoItem = ({ id, title, isCompleted }) => {
     setIsEditing(false)
   }
 
+  useEffect(() => {
+    if (!isEditing || !inputRef.current) return
+    inputRef.current.focus()
+    inputRef.current.value = title
+  }, [isEditing])
+
   return (
     <div class='todo-item'>
       {isEditing ? (
         <form class='todo-form' onSubmit={onEditTodo}>
           <input
+            ref={inputRef}
             type='text'
             name='title'
             placeholder='Todo title'
-            defaultValue={title}
-            autoFocus
           />
           <button class='material-icons'>check</button>
           <i class='material-icons' onClick={() => setIsEditing(false)}>
