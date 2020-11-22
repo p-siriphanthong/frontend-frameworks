@@ -23,7 +23,7 @@
 
 <script>
 import { subscribeTodos, addTodo } from '../redux'
-import TodoItem from './TodoItem'
+import TodoItem from './TodoItem.vue'
 
 export default {
   components: {
