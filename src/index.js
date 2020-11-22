@@ -1,3 +1,3 @@
 import './react'
 import './preact'
-import './vue-v2'
+import './vue2'

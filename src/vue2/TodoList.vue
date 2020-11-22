@@ -1,5 +1,5 @@
 <template>
-  <div id="vue-v2">
+  <div id="vue2">
     <div class="card">
       <h5 class="section center-align white-text">Vue 2</h5>
       <div class="card-content">
