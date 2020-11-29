@@ -1,3 +1,7 @@
+:root {
+  --primary-color: #aaaaaa;
+}
+
 #react {
   --primary-color: #61dafb;
 }
@@ -6,7 +10,8 @@
   --primary-color: #673ab8;
 }
 
-#vue2 {
+#vue2,
+#vue3 {
   --primary-color: #4fc08d;
 }
 

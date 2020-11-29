@@ -1,6 +1,5 @@
 import { h } from 'preact'
 import { useState, useEffect, useRef } from 'preact/hooks'
-import { editTodo, removeTodo, toggleCompleted } from '../redux'
 
 /** @jsx h */
 
@@ -10,7 +9,7 @@ const TodoItem = ({ id, title, isCompleted }) => {
 
   const onEditTodo = (event) => {
     event.preventDefault()
-    editTodo(id, event.target.elements.title.value)
+    store.editTodo(id, event.target.elements.title.value)
     setIsEditing(false)
   }
 
@@ -41,14 +40,14 @@ const TodoItem = ({ id, title, isCompleted }) => {
             <input
               type='checkbox'
               checked={isCompleted}
-              onInput={() => toggleCompleted(id)}
+              onInput={() => store.toggleCompleted(id)}
             />
             <span>{title}</span>
           </label>
           <i class='material-icons' onClick={() => setIsEditing(true)}>
             edit
           </i>
-          <i class='material-icons' onClick={() => removeTodo(id)}>
+          <i class='material-icons' onClick={() => store.removeTodo(id)}>
             delete
           </i>
         </div>

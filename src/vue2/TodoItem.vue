@@ -33,8 +33,6 @@
 </template>
 
 <script>
-import { editTodo, removeTodo, toggleCompleted } from '../redux'
-
 export default {
   props: ['id', 'title', 'isCompleted'],
   data: function() {
@@ -54,14 +52,14 @@ export default {
     },
     editTodo: function(event) {
       event.preventDefault()
-      editTodo(this.id, this.editingTitle)
+      store.editTodo(this.id, this.editingTitle)
       this.isEditing = false
     },
     removeTodo: function() {
-      removeTodo(this.id)
+      store.removeTodo(this.id)
     },
     toggleCompleted: function() {
-      toggleCompleted(this.id)
+      store.toggleCompleted(this.id)
     },
   },
 }

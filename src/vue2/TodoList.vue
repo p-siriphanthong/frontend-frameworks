@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import { subscribeTodos, addTodo } from '../redux'
 import TodoItem from './TodoItem.vue'
 
 export default {
@@ -35,14 +34,14 @@ export default {
     }
   },
   created: function() {
-    subscribeTodos((state) => {
+    store.subscribeTodos((state) => {
       this.todos = state
     })
   },
   methods: {
     addTodo: function(event) {
       event.preventDefault()
-      addTodo(event.target.elements.title.value)
+      store.addTodo(event.target.elements.title.value)
       event.currentTarget.reset()
     },
   },

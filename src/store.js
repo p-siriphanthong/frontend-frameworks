@@ -37,27 +37,35 @@ function todoReducer(state = { todos: [] }, action) {
 
 const store = createStore(todoReducer)
 
-export const subscribeTodos = (callback) => {
+const subscribeTodos = (callback) => {
   if (!callback) return
   store.subscribe(() => callback(store.getState().todos))
 }
 
-export const addTodo = (title) => {
+const addTodo = (title) => {
   if (!title) return
   store.dispatch({ type: 'ADD_TODO', title })
 }
 
-export const editTodo = (id, title) => {
+const editTodo = (id, title) => {
   if (!id || !title) return
   store.dispatch({ type: 'EDIT_TODO', id, title })
 }
 
-export const removeTodo = (id) => {
+const removeTodo = (id) => {
   if (!id) return
   store.dispatch({ type: 'REMOVE_TODO', id })
 }
 
-export const toggleCompleted = (id) => {
+const toggleCompleted = (id) => {
   if (!id) return
   store.dispatch({ type: 'TOGGLE_COMPLETED', id })
+}
+
+global.store = {
+  subscribeTodos,
+  addTodo,
+  editTodo,
+  removeTodo,
+  toggleCompleted,
 }

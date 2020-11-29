@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
-import { editTodo, removeTodo, toggleCompleted } from '../redux'
 
 const TodoItem = ({ id, title, isCompleted }) => {
   const [isEditing, setIsEditing] = useState(false)
 
   const onEditTodo = (event) => {
     event.preventDefault()
-    editTodo(id, event.target.elements.title.value)
+    store.editTodo(id, event.target.elements.title.value)
     setIsEditing(false)
   }
 
@@ -32,14 +31,14 @@ const TodoItem = ({ id, title, isCompleted }) => {
             <input
               type='checkbox'
               checked={isCompleted}
-              onChange={() => toggleCompleted(id)}
+              onChange={() => store.toggleCompleted(id)}
             />
             <span>{title}</span>
           </label>
           <i className='material-icons' onClick={() => setIsEditing(true)}>
             edit
           </i>
-          <i className='material-icons' onClick={() => removeTodo(id)}>
+          <i className='material-icons' onClick={() => store.removeTodo(id)}>
             delete
           </i>
         </div>

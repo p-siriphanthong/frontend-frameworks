@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { subscribeTodos, addTodo } from '../redux'
 import TodoItem from './TodoItem'
 
 const TodoList = () => {
@@ -7,12 +6,12 @@ const TodoList = () => {
 
   const onAddTodo = (event) => {
     event.preventDefault()
-    addTodo(event.target.elements.title.value)
+    store.addTodo(event.target.elements.title.value)
     event.currentTarget.reset()
   }
 
   useEffect(() => {
-    subscribeTodos((state) => setTodos(state))
+    store.subscribeTodos((state) => setTodos(state))
   }, [])
 
   return (
