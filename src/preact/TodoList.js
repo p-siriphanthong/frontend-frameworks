@@ -14,7 +14,8 @@ const TodoList = () => {
   }
 
   useEffect(() => {
-    store.subscribeTodos((state) => setTodos(state))
+    const initialTodos = store.subscribeTodos((state) => setTodos(state))
+    setTodos(initialTodos)
   }, [])
 
   return (

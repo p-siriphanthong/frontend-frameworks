@@ -1,8 +1,14 @@
 import { createStore } from 'redux'
 
-let id = 0
+const initialTodos = [
+  { id: 3, title: 'Setup ESLint', isCompleted: false },
+  { id: 2, title: 'Share state using Redux', isCompleted: true },
+  { id: 1, title: 'Create todo applications', isCompleted: true },
+]
 
-function todoReducer(state = { todos: [] }, action) {
+let id = initialTodos.length
+
+function todoReducer(state = { todos: initialTodos }, action) {
   switch (action.type) {
     case 'ADD_TODO':
       return {
@@ -40,6 +46,7 @@ const store = createStore(todoReducer)
 const subscribeTodos = (callback) => {
   if (!callback) return
   store.subscribe(() => callback(store.getState().todos))
+  return store.getState().todos
 }
 
 const addTodo = (title) => {

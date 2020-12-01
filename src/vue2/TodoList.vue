@@ -34,7 +34,7 @@ export default {
     }
   },
   created: function() {
-    store.subscribeTodos((state) => {
+    this.todos = store.subscribeTodos((state) => {
       this.todos = state
     })
   },
