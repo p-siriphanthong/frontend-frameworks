@@ -128,3 +128,11 @@ input[type='checkbox']:checked + span:before {
   margin-left: 5px;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  #root {
+    grid-template-columns: unset;
+    grid-gap: 15px;
+    padding: 15px;
+  }
+}
