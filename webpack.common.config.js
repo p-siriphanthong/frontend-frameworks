@@ -5,6 +5,7 @@ module.exports = {
     store: './src/store.js',
     react: './src/react/index.js',
     preact: './src/preact/index.js',
+    angularjs: './src/angularjs/index.js',
   },
   output: {
     filename: '[name].js',
@@ -22,6 +23,10 @@ module.exports = {
             presets: ['@babel/preset-env', '@babel/preset-react'],
           },
         },
+      },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
       },
     ],
   },

@@ -1,0 +1,35 @@
+<div class="todo-item" ng-switch="$ctrl.isEditing">
+  <form
+    class="todo-form"
+    ng-switch-when="true"
+    ng-submit="$ctrl.editTodo($event)"
+  >
+    <input
+      ng-model="$ctrl.editingTitle"
+      type="text"
+      name="title"
+      placeholder="Todo title"
+      autofocus
+    />
+    <button class="material-icons">check</button>
+    <i class="material-icons" ng-click="$ctrl.onCancelEditing()">
+      close
+    </i>
+  </form>
+  <div class="todo-view" ng-switch-default>
+    <label>
+      <input
+        type="checkbox"
+        ng-model="$ctrl.isCompleted"
+        ng-change="$ctrl.toggleCompleted()"
+      />
+      <span>{{ $ctrl.title }}</span>
+    </label>
+    <i class="material-icons" ng-click="$ctrl.onEditing()">
+      edit
+    </i>
+    <i class="material-icons" ng-click="$ctrl.removeTodo()">
+      delete
+    </i>
+  </div>
+</div>

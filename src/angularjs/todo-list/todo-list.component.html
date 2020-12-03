@@ -1,0 +1,17 @@
+<div class="card">
+  <h5 class="section center-align white-text">AngularJS</h5>
+  <div class="card-content">
+    <form class="add-form row valign-wrapper" ng-submit="$ctrl.addTodo($event)">
+      <div class="input-field col s9">
+        <input type="text" name="title" placeholder="Add todo" />
+      </div>
+      <button class="col s3 btn">Add</button>
+    </form>
+    <div class="todo-items">
+      <todo-item
+        ng-repeat="todo in $ctrl.todos track by todoTracker(todo)"
+        todo="todo"
+      ></todo-item>
+    </div>
+  </div>
+</div>

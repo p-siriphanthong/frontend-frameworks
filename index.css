@@ -15,6 +15,10 @@
   --primary-color: #4fc08d;
 }
 
+#angularjs {
+  --primary-color: #dd1b16;
+}
+
 #root {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -74,23 +78,24 @@ input[type='checkbox']:checked + span:before {
 
 .card {
   margin: 0;
+  overflow: hidden;
 }
 
-.card > .section {
+.card .section {
   margin: 0;
   background-color: var(--primary-color);
 }
 
-.card > .card-content {
+.card .card-content {
   padding-top: 15px;
 }
 
-.add-form > .input-field {
+.add-form .input-field {
   margin: 0;
   padding-left: 0 !important;
 }
 
-.add-form > .input-field > label {
+.add-form .input-field label {
   left: 0 !important;
 }
 
@@ -99,27 +104,27 @@ input[type='checkbox']:checked + span:before {
   overflow-y: scroll;
 }
 
-.todo-items > .todo-item {
+.todo-items .todo-item {
   padding: 10px 0;
 }
 
-.todo-items > .todo-item > .todo-view,
-.todo-items > .todo-item > .todo-form {
+.todo-items .todo-item .todo-view,
+.todo-items .todo-item .todo-form {
   display: flex;
 }
 
-.todo-items > .todo-item input {
+.todo-items .todo-item input {
   height: 24px;
   margin: 0;
 }
 
-.todo-items > .todo-item > .todo-view > label,
-.todo-items > .todo-item > .todo-form > input {
+.todo-items .todo-item .todo-view label,
+.todo-items .todo-item .todo-form input {
   flex: 1;
   margin-right: 20px;
 }
 
-.todo-items > .todo-item .material-icons {
+.todo-items .todo-item .material-icons {
   margin-left: 5px;
   cursor: pointer;
 }
