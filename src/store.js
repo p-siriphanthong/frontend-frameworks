@@ -43,10 +43,13 @@ function todoReducer(state = { todos: initialTodos }, action) {
 
 const store = createStore(todoReducer)
 
+const getTodos = () => {
+  return store.getState().todos
+}
+
 const subscribeTodos = (callback) => {
   if (!callback) return
-  store.subscribe(() => callback(store.getState().todos))
-  return store.getState().todos
+  store.subscribe(() => callback(getTodos()))
 }
 
 const addTodo = (title) => {
@@ -70,6 +73,7 @@ const toggleCompleted = (id) => {
 }
 
 global.store = {
+  getTodos,
   subscribeTodos,
   addTodo,
   editTodo,

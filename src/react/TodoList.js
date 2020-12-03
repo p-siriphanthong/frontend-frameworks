@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import TodoItem from './TodoItem'
 
 const TodoList = () => {
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState(store.getTodos())
 
   const onAddTodo = (event) => {
     event.preventDefault()
@@ -11,8 +11,7 @@ const TodoList = () => {
   }
 
   useEffect(() => {
-    const initialTodos = store.subscribeTodos((state) => setTodos(state))
-    setTodos(initialTodos)
+    store.subscribeTodos((state) => setTodos(state))
   }, [])
 
   return (

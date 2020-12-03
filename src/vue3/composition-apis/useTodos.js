@@ -1,10 +1,10 @@
 import { ref, onMounted } from 'vue'
 
 function useTodos() {
-  const todos = ref([])
+  const todos = ref(store.getTodos())
 
   onMounted(() => {
-    todos.value = store.subscribeTodos((state) => {
+    store.subscribeTodos((state) => {
       todos.value = state
     })
   })

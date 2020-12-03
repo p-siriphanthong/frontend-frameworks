@@ -30,11 +30,11 @@ export default {
   },
   data: function() {
     return {
-      todos: [],
+      todos: store.getTodos(),
     }
   },
   created: function() {
-    this.todos = store.subscribeTodos((state) => {
+    store.subscribeTodos((state) => {
       this.todos = state
     })
   },
