@@ -26,10 +26,7 @@ const TodoList = () => {
         </form>
         <div className='todo-items'>
           {todos.map((todo) => (
-            <TodoItem
-              key={`${todo.id}-${todo.title.replace(/\s/g, '_')}`}
-              {...todo}
-            />
+            <TodoItem key={store.getTodoKey(todo)} {...todo} />
           ))}
         </div>
       </div>

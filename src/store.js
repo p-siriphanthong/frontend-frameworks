@@ -47,6 +47,14 @@ const getTodos = () => {
   return store.getState().todos
 }
 
+const getTodoKey = (todo) => {
+  if (!todo) return
+  const id = todo.id
+  const title = todo.title.replace(/\s/g, '_')
+  const isCompleted = String(todo.isCompleted)
+  return `${id}-${title}-${isCompleted}`
+}
+
 const subscribeTodos = (callback) => {
   if (!callback) return
   store.subscribe(() => callback(getTodos()))
@@ -74,6 +82,7 @@ const toggleCompleted = (id) => {
 
 global.store = {
   getTodos,
+  getTodoKey,
   subscribeTodos,
   addTodo,
   editTodo,

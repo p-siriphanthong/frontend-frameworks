@@ -12,7 +12,7 @@
         <todo-item
           v-for="todo in todos"
           :id="todo.id"
-          :key="`${todo.id}-${todo.title.replace(/\s/g, '_')}`"
+          :key="getTodoKey(todo)"
         ></todo-item>
       </div>
     </div>
@@ -36,6 +36,9 @@ export default {
     }
   },
   methods: {
+    getTodoKey: function(todo) {
+      return store.getTodoKey(todo)
+    },
     onAddTodo: function(event) {
       event.preventDefault()
       this.addTodo(event.target.elements.title.value)

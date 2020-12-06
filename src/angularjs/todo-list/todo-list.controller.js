@@ -12,7 +12,7 @@ function TodoListController($scope) {
   }
 
   $scope.todoTracker = function(todo) {
-    return `${todo.id}-${todo.title.replace(/\s/g, '_')}`
+    return store.getTodoKey(todo)
   }
 
   $ctrl.addTodo = function(event) {
