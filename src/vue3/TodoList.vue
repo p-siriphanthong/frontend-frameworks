@@ -2,7 +2,7 @@
   <div class="card">
     <h5 class="section center-align white-text">Vue 3</h5>
     <div class="card-content">
-      <form class="add-form row valign-wrapper" @submit="addTodo">
+      <form class="add-form row valign-wrapper" @submit="onAddTodo">
         <div class="input-field col s9">
           <input type="text" name="title" placeholder="Add todo" />
         </div>
@@ -36,7 +36,7 @@ export default {
     }
   },
   methods: {
-    addTodo: function(event) {
+    onAddTodo: function(event) {
       event.preventDefault()
       this.addTodo(event.target.elements.title.value)
       event.currentTarget.reset()

@@ -1,6 +1,6 @@
 <template>
   <div class="todo-item">
-    <form class="todo-form" v-if="isEditing" @submit="editTodo">
+    <form class="todo-form" v-if="isEditing" @submit="onEditTodo">
       <input
         v-model="editingTitle"
         ref="editingTitleInput"
@@ -18,14 +18,14 @@
         <input
           type="checkbox"
           :checked="todo.isCompleted"
-          @change="toggleCompleted"
+          @change="onToggleCompleted"
         />
         <span>{{ todo.title }}</span>
       </label>
       <i class="material-icons" @click="onEditing">
         edit
       </i>
-      <i class="material-icons" @click="removeTodo">
+      <i class="material-icons" @click="onRemoveTodo">
         delete
       </i>
     </div>
@@ -62,15 +62,15 @@ export default {
     onCancelEditing: function() {
       this.isEditing = false
     },
-    editTodo: function(event) {
+    onEditTodo: function(event) {
       event.preventDefault()
       this.editTodo(this.editingTitle)
       this.isEditing = false
     },
-    removeTodo: function() {
+    onRemoveTodo: function() {
       this.removeTodo()
     },
-    toggleCompleted: function() {
+    onToggleCompleted: function() {
       this.toggleCompleted()
     },
   },
