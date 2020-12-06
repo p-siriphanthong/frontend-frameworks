@@ -20,6 +20,10 @@
   --primary-color: #dd1b16;
 }
 
+#svelte {
+  --primary-color: #ff3e00;
+}
+
 #root {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));

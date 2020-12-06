@@ -7,6 +7,7 @@ module.exports = {
     preact: './src/preact/index.js',
     angularjs: './src/angularjs/index.js',
     angular: './src/angular/index.js',
+    svelte: './src/svelte/index.js',
   },
   output: {
     filename: '[name].js',
@@ -32,6 +33,11 @@ module.exports = {
       {
         test: /\.html$/i,
         loader: 'html-loader',
+      },
+      {
+        test: /\.svelte$/,
+        exclude: /node_modules/,
+        use: 'svelte-loader',
       },
     ],
   },
