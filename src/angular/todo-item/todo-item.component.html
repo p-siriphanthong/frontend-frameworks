@@ -1,0 +1,31 @@
+<div class="todo-item">
+  <form class="todo-form" *ngIf="isEditing" (submit)="editTodo($event)">
+    <input
+      [(ngModel)]="editingTitle"
+      type="text"
+      name="title"
+      placeholder="Todo title"
+      [autofocus]
+    />
+    <button class="material-icons">check</button>
+    <i class="material-icons" (click)="onCancelEditing()">
+      close
+    </i>
+  </form>
+  <div class="todo-view" *ngIf="!isEditing">
+    <label>
+      <input
+        type="checkbox"
+        [checked]="todo.isCompleted"
+        (change)="toggleCompleted()"
+      />
+      <span>{{ todo.title }}</span>
+    </label>
+    <i class="material-icons" (click)="onEditing()">
+      edit
+    </i>
+    <i class="material-icons" (click)="removeTodo()">
+      delete
+    </i>
+  </div>
+</div>

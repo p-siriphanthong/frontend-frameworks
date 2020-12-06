@@ -1,9 +1,8 @@
 import angular from 'angular'
-import template from './todo-item.component.html'
 import controller from './todo-item.controller'
 
 angular.module('angularjs-app').component('todoItem', {
-  template,
+  template: require('./todo-item.component.html'),
   controller,
   bindings: { todo: '<' },
 })

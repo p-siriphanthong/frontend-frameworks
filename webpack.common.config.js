@@ -6,6 +6,7 @@ module.exports = {
     react: './src/react/index.js',
     preact: './src/preact/index.js',
     angularjs: './src/angularjs/index.js',
+    angular: './src/angular/index.js',
   },
   output: {
     filename: '[name].js',
@@ -25,12 +26,17 @@ module.exports = {
         },
       },
       {
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+      },
+      {
         test: /\.html$/i,
         loader: 'html-loader',
       },
     ],
   },
   resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
       store: 'global.store',
     },

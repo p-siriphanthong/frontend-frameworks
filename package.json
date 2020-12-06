@@ -4,17 +4,25 @@
   "main": "index.html",
   "license": "ISC",
   "scripts": {
-    "dev": "webpack serve --env development",
+    "dev": "webpack serve --mode development --env development",
     "build": "rm -rf ./dist && webpack --mode production"
   },
   "dependencies": {
+    "@angular/common": "^11.0.3",
+    "@angular/compiler": "^11.0.3",
+    "@angular/core": "^11.0.3",
+    "@angular/forms": "^11.0.3",
+    "@angular/platform-browser": "^11.0.3",
+    "@angular/platform-browser-dynamic": "^11.0.3",
     "angular": "^1.8.2",
     "preact": "^10.5.5",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "redux": "^4.0.5",
+    "rxjs": "^6.6.3",
     "vue2": "npm:vue@^2.6.12",
-    "vue3": "npm:vue@^3.0.2"
+    "vue3": "npm:vue@^3.0.2",
+    "zone.js": "^0.11.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.7",
@@ -23,6 +31,8 @@
     "@vue/compiler-sfc": "^3.0.2",
     "babel-loader": "^8.2.1",
     "html-loader": "^1.3.2",
+    "ts-loader": "^8.0.11",
+    "typescript": "^4.1.2",
     "vue-template-compiler": "^2.6.12",
     "vue2-loader": "npm:vue-loader@^15.9.5",
     "vue3-loader": "npm:vue-loader@^16.0.0",

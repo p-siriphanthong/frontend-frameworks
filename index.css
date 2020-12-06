@@ -15,7 +15,8 @@
   --primary-color: #4fc08d;
 }
 
-#angularjs {
+#angularjs,
+#angular {
   --primary-color: #dd1b16;
 }
 
