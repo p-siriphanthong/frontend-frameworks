@@ -8,6 +8,7 @@ module.exports = {
     angularjs: './src/angularjs/index.js',
     angular: './src/angular/index.js',
     svelte: './src/svelte/index.js',
+    riot: './src/riot/index.js',
   },
   output: {
     filename: '[name].js',
@@ -38,6 +39,11 @@ module.exports = {
         test: /\.svelte$/,
         exclude: /node_modules/,
         use: 'svelte-loader',
+      },
+      {
+        test: /\.riot$/,
+        exclude: /node_modules/,
+        use: '@riotjs/webpack-loader',
       },
     ],
   },

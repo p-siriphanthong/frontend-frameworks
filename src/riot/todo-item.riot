@@ -1,0 +1,66 @@
+<todo-item>
+  <div class="todo-item">
+    <form class="todo-form" if={ state.isEditing } onsubmit={ editTodo }>
+      <input
+        value={ state.editingTitle }
+        onchange={ updateEditTitle }
+        type="text"
+        name="title"
+        placeholder="Todo title"
+      />
+      <button class="material-icons">check</button>
+      <i class="material-icons" onclick={ onCancelEditing }>
+        close
+      </i>
+    </form>
+    <div class="todo-view" if={ !state.isEditing }>
+      <label>
+        <input
+          type="checkbox"
+          checked={ props.isCompleted }
+          onchange={ toggleCompleted }
+        />
+        <span>{ props.title }</span>
+      </label>
+      <i class="material-icons" onclick={ onEditing }>
+        edit
+      </i>
+      <i class="material-icons" onclick={ removeTodo }>
+        delete
+      </i>
+    </div>
+  </div>
+
+  <script>
+    export default {
+      state: {
+        isEditing: false,
+        editingTitle: '',
+      },
+      onEditing() {
+        this.update({
+          editingTitle: this.props.title,
+          isEditing: true
+        })
+        this.$('input[name="title"]').focus()
+      },
+      updateEditTitle(event) {
+        this.update({ editingTitle: event.target.value })
+      },
+      onCancelEditing() {
+        this.update({ isEditing: false })
+      },
+      editTodo(event) {
+        event.preventDefault()
+        store.editTodo(this.props.id, this.state.editingTitle)
+        this.update({ isEditing: false })
+      },
+      removeTodo() {
+        store.removeTodo(this.props.id)
+      },
+      toggleCompleted() {
+        store.toggleCompleted(this.props.id)
+      },
+    }
+  </script>
+</todo-item>

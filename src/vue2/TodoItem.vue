@@ -37,8 +37,8 @@ export default {
   props: ['id', 'title', 'isCompleted'],
   data: function() {
     return {
-      editingTitle: this.title,
       isEditing: false,
+      editingTitle: '',
     }
   },
   methods: {

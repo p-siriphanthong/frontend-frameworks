@@ -49,8 +49,8 @@ export default {
   },
   data: function() {
     return {
-      editingTitle: this.title,
       isEditing: false,
+      editingTitle: '',
     }
   },
   methods: {

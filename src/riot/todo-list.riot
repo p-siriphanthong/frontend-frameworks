@@ -1,0 +1,46 @@
+<todo-list>
+  <div class="card">
+    <h5 class="section center-align white-text">Riot</h5>
+    <div class="card-content">
+      <form class="add-form row valign-wrapper" onsubmit={ addTodo }>
+        <div class="input-field col s9">
+          <input type="text" name="title" placeholder="Add todo" />
+        </div>
+        <button class="col s3 btn">Add</button>
+      </form>
+      <div class="todo-items">
+        <todo-item
+          each={ todo in state.todos }
+          key={ getTodoKey(todo) }
+          { ...todo }
+        />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    import TodoItem from './todo-item.riot'
+    
+    export default {
+      components: {
+        TodoItem
+      },
+      state: {
+        todos: store.getTodos(),
+      },
+      onMounted() {
+        store.subscribeTodos((state) => {
+          this.update({ todos: state })
+        })
+      },
+      getTodoKey(todo) {
+        return store.getTodoKey(todo)
+      },
+      addTodo(event) {
+        event.preventDefault()
+        store.addTodo(event.target.elements.title.value)
+        event.currentTarget.reset()
+      },
+    }
+  </script>
+</todo-list>

@@ -7,7 +7,7 @@ function TodoItemController() {
     $ctrl.isCompleted = $ctrl.todo.isCompleted
 
     $ctrl.isEditing = false
-    $ctrl.editingTitle = $ctrl.title
+    $ctrl.editingTitle = ''
   }
 
   $ctrl.onEditing = function() {

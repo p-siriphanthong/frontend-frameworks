@@ -6,7 +6,7 @@
   export let isCompleted
 
   let isEditing = false
-  let editingTitle = title
+  let editingTitle = ''
   let editingTitleInput
 
   async function onEditing() {
