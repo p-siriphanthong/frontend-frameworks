@@ -8,10 +8,10 @@
       <button class="col s3 btn">Add</button>
     </form>
     <div class="todo-items">
-      <todo-item
+      <angular-todo-item
         *ngFor="let todo of todos; trackBy: todoTracker"
         [todo]="todo"
-      ></todo-item>
+      ></angular-todo-item>
     </div>
   </div>
 </div>

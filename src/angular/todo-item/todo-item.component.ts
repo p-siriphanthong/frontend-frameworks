@@ -2,7 +2,7 @@ import { Component, Inject, ApplicationRef, Input } from '@angular/core'
 import { Todo } from '@types'
 
 @Component({
-  selector: 'todo-item',
+  selector: 'angular-todo-item',
   template: require('./todo-item.component.html'),
 })
 export class TodoItemComponent {

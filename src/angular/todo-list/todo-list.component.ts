@@ -2,7 +2,7 @@ import { Component, Inject, ApplicationRef, OnInit } from '@angular/core'
 import { Todo } from '@types'
 
 @Component({
-  selector: 'todo-list',
+  selector: 'angular-todo-list',
   template: require('./todo-list.component.html'),
 })
 export class TodoListComponent implements OnInit {

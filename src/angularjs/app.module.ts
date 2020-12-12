@@ -14,7 +14,9 @@ function autofocus($timeout) {
 angular
   .module('angularjs-app', [])
   .directive('autofocus', ['$timeout', autofocus])
-  .component('angularjsApp', { template: '<todo-list></todo-list>' })
+  .component('angularjsApp', {
+    template: '<angularjs-todo-list></angularjs-todo-list>',
+  })
 
 require('./todo-list')
 require('./todo-item')

@@ -1,4 +1,4 @@
-<todo-list>
+<riot-todo-list>
   <div class="card">
     <h5 class="section center-align white-text">Riot</h5>
     <div class="card-content">
@@ -9,7 +9,7 @@
         <button class="col s3 btn">Add</button>
       </form>
       <div class="todo-items">
-        <todo-item
+        <riot-todo-item
           each={ todo in state.todos }
           key={ getTodoKey(todo) }
           { ...todo }
@@ -23,7 +23,7 @@
     
     export default {
       components: {
-        TodoItem
+        'riot-todo-item': TodoItem,
       },
       state: {
         todos: store.getTodos(),
@@ -43,4 +43,4 @@
       },
     }
   </script>
-</todo-list>
+</riot-todo-list>
