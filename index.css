@@ -28,6 +28,10 @@
   --primary-color: #ed1846;
 }
 
+#polymer {
+  --primary-color: #ff4470;
+}
+
 #root {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -113,27 +117,27 @@ input[type='checkbox']:checked + span:before {
   overflow-y: scroll;
 }
 
-.todo-items .todo-item {
+.todo-item {
   padding: 10px 0;
 }
 
-.todo-items .todo-item .todo-view,
-.todo-items .todo-item .todo-form {
+.todo-item .todo-view,
+.todo-item .todo-form {
   display: flex;
 }
 
-.todo-items .todo-item input {
-  height: 24px;
-  margin: 0;
+.todo-item input {
+  height: 24px !important;
+  margin: 0 !important;
 }
 
-.todo-items .todo-item .todo-view label,
-.todo-items .todo-item .todo-form input {
+.todo-item .todo-view label,
+.todo-item .todo-form input {
   flex: 1;
   margin-right: 20px;
 }
 
-.todo-items .todo-item .material-icons {
+.todo-item .material-icons {
   margin-left: 5px;
   cursor: pointer;
 }

@@ -9,6 +9,7 @@ module.exports = {
     angular: './src/angular/index.js',
     svelte: './src/svelte/index.js',
     riot: './src/riot/index.js',
+    polymer: './src/polymer/index.js',
   },
   output: {
     filename: '[name].js',
